@@ -1,0 +1,164 @@
+/* Reseteo de estilos para todos los elementos y pseudoelementos */
+*,
+::before,
+::after {
+  padding: 0; /* Elimina padding por defecto */
+  margin: 0; /* Elimina margin por defecto */
+  box-sizing: border-box; /* Incluye padding y borde en el tamaño total */
+}
+
+/* Estilos generales para el contenedor html */
+html {
+  display: flex; /* Usa Flexbox para alinear el contenido */
+  flex-direction: column; /* Organiza los elementos en columna */
+  align-items: center; /* Centra el contenido horizontalmente */
+  gap: 16px; /* Espacio entre los elementos */
+  max-width: 1400px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra el contenedor horizontalmente */
+}
+
+/* Estilos para el cuerpo de la página */
+body {
+  width: 80%; /* Ancho del body al 80% del contenedor */
+  margin: 2rem auto 0; /* Márgenes verticales de 2rem y centrado horizontal */
+  font-family: "Poppins", sans-serif; /* Fuente tipográfica */
+  font-size: 1rem; /* Tamaño de la fuente */
+  font-weight: 400; /* Peso de la fuente */
+  line-height: 1.4; /* Altura de línea */
+  display: flex; /* Usa Flexbox para el layout */
+  flex-direction: column; /* Organiza los elementos en columna */
+  min-height: 100vh; /* Altura mínima igual a la altura de la ventana */
+  align-items: center; /* Centra el contenido horizontalmente */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilos para el header */
+header {
+  justify-content: space-between; /* Espacia los elementos hijos */
+  align-items: center; /* Centra los elementos verticalmente */
+  padding: 1rem; /* Espacio interno */
+  display: flex; /* Usa Flexbox para el layout */
+  flex-direction: column; /* Organiza los elementos en columna */
+}
+
+/* Estilos para la imagen en el header */
+#header-img {
+  width: 100%; /* Ajusta el ancho a 100% del contenedor */
+  max-width: 400px; /* Ancho máximo de 200px */
+}
+
+/* Estilos para la barra de navegación fija */
+#nav-bar {
+  position: fixed; /* Fija la posición en la parte superior */
+  top: 0; /* Ubica el nav en la parte superior */
+  left: 0; /* Alinea el nav al borde izquierdo */
+  width: 100%; /* Ancho del nav al 100% del contenedor */
+  display: flex; /* Usa Flexbox para alinear los elementos */
+  justify-content: space-between; /* Espacia los elementos hijos */
+  align-items: center; /* Centra los elementos verticalmente */
+  padding: 1rem 5rem; /* Espacio interno */
+  background-color: #fff; /* Fondo blanco */
+  z-index: 1000; /* Asegura que el nav esté sobre otros elementos */
+}
+
+/* Estilos para la lista de navegación */
+nav ul {
+  display: flex; /* Usa Flexbox para la lista */
+  list-style: none; /* Elimina viñetas de lista */
+  margin: 0; /* Elimina margen */
+  padding: 0; /* Elimina padding */
+}
+
+/* Estilos para los elementos de la lista en la navegación */
+nav li {
+  margin-left: 80px; /* Espacio entre los elementos de la lista */
+}
+
+/* Estilos para los enlaces en la navegación */
+nav a {
+  color: black; /* Color del texto */
+  text-decoration: none; /* Elimina subrayado de enlaces */
+  font-weight: 500; /* Peso de la fuente */
+}
+
+/* Estilos para el contenido principal */
+main {
+  margin-top: 80px; /* Espacio superior para evitar que el contenido quede oculto detrás del nav */
+  flex: 1; /* Permite que el main ocupe el espacio restante */
+}
+
+/* Estilos para el footer */
+footer {
+  width: 100%; /* Ancho del footer al 100% del contenedor */
+  background-color: #333; /* Fondo gris oscuro */
+  color: white; /* Color del texto blanco */
+  height: 6rem; /* Altura del footer */
+  text-align: center; /* Centra el texto horizontalmente */
+  display: flex; /* Usa Flexbox para alinear los elementos */
+  justify-content: center; /* Centra los elementos horizontalmente */
+  align-items: center; /* Centra los elementos verticalmente */
+  margin-top: auto; /* Coloca el footer al final del contenedor */
+}
+
+/* Estilos para el título principal */
+#titulo2{
+  color: #ff4d01;
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+/* Estilos para el formulario */
+#form {
+  display: flex; /* Usa Flexbox para alinear los elementos */
+  flex-direction: row; /* Organiza los elementos en columna */
+  gap: 0.5rem; /* Espacio entre los elementos */
+  max-width: 800px; /* Ancho máximo del formulario */
+  margin: 1rem auto; /* Centra el formulario horizontalmente */
+}
+
+#form #email {
+  padding: 0.5rem; /* Espacio interno */
+  border: 1px solid #ccc; /* Borde de 1px sólido gris */
+  border-radius: 4px; /* Bordes redondeados */
+  width: 75%; /* Ancho al 100% del contenedor */
+}
+
+#form #submit {
+  padding: 0.5rem; /* Espacio interno */
+  border: 1px solid #ccc; /* Borde de 1px sólido gris */
+  border-radius: 4px; /* Bordes redondeados */
+  width: 25%; /* Ancho al 100% del contenedor */
+}
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 1015px) {
+  nav {
+    flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    align-items: center; /* Alinea los elementos a la izquierda */
+    position: relative;
+  }
+
+  main {
+    margin-top: 10px; /* Espacio superior para evitar que el contenido quede oculto detrás del nav */
+    font-size: 0.9rem; /* Tamaño de la fuente */
+    
+  }
+
+  #titulo2{
+    font-size: 2rem;
+  }
+  
+  nav ul {
+    flex-direction: column; /* Organiza los enlaces en columna */
+    padding: 0; /* Elimina padding */
+  }
+
+  nav li {
+    margin: 10px 0; /* Espacio vertical entre los enlaces */
+  }
+
+  nav #header-img {
+    margin-bottom: 10px; /* Espacio inferior para el logo en pantallas pequeñas */
+  }
+}
