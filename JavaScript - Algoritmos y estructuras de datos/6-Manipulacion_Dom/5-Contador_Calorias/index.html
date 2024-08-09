@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego 🪨, 🗞️, ✂️</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <h1>¡Juguemos piedra, papel y tijera!</h1>
+    <main>
+      <details class="rules-container">
+        <summary>Reglas del Juego</summary>
+
+        <p>Jugarás contra la computadora.</p>
+        <p>Puedes elegir entre piedra, papel o tijeras</p>
+        <p>Quien llegue primero a 3 puntos ganará.</p>
+
+        <p>Reglas de puntuación:</p>
+        <ul>
+          <li>🪨 vence a ✂️</li>
+          <li>✂️ vence a 🗞️</li>
+          <li>🗞️ vence a 🪨</li>
+        </ul>
+        <p>
+          Si el jugador y el rival eligen la misma opción (Ej. 🗞️ y
+          🗞️), nadie obtendra puntos, será empate.
+        </p>
+      </details>
+
+      <div class="score-container">
+        <strong
+          >Puntuacion Jugador 😎: <span class="score" id="player-score">0</span></strong
+        >
+        <strong
+          >Puntuacion Rival 🤖:
+          <span class="score" id="computer-score">0</span></strong
+        >
+      </div>
+
+      <section class="options-container">
+        <h2>Elige una opción:</h2>
+        <div class="btn-container">
+          <button id="rock-btn" class="btn">🪨</button>
+          <button id="paper-btn" class="btn">🗞️</button>
+          <button id="scissors-btn" class="btn">✂️</button>
+        </div>
+      </section>
+
+      <div class="results-container">
+        <p id="results-msg"></p>
+        <p id="winner-msg"></p>
+        <button class="btn" id="reset-game-btn">¿Volver a jugar?</button>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
