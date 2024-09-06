@@ -38,11 +38,146 @@ const rollDice = () => {
   });
 };
 
+const updateStats = () => {
+  roundElement.textContent = round;
+  rollsElement.textContent = rolls;
+};
+
+const updateRadioOption = (index, score) => {
+  scoreInputs[index].disabled = false; // activamos el boton radio
+  scoreInputs[index].value = score; // asignamos el valor
+
+  scoreSpans[index].textContent = `, score = ${score}`; // mostramos el valor
+};
+
+const updateScore = (selectedValue, achieved) => {
+  score += parseInt(selectedValue);
+  totalScoreElement.textContent = score;
+
+  scoreHistory.innerHTML += `<li>${achieved} : ${selectedValue}</li>`;
+};
+
+const getHighestDuplicates = (arr) => {
+  const nums = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+  };
+
+  let sum = 0;
+  arr?.forEach((el) => {
+    nums[el]++;
+    sum += el;
+  });
+
+  for (let key in nums) {
+    if (nums[key] >= 3) {
+      if (nums[key] >= 4) {
+        updateRadioOption(1, sum);
+      }
+      updateRadioOption(0, sum);
+    }
+    updateRadioOption(scoreInputs.length - 1, 0);
+  }
+};
+
+const detectFullHouse = (arr) => {
+  const nums = {
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+  };
+
+  for (const num of arr) {
+    nums[num]++;
+  }
+
+  if (Object.values(nums).includes(3) && Object.values(nums).includes(2)) {
+    updateRadioOption(2, 25);
+  }
+  updateRadioOption(5, 0);
+};
+
+const resetRadioOptions = () => {
+  scoreInputs.forEach((input) => {
+    input.disabled = true;
+    input.checked = false;
+  });
+
+  scoreSpans.forEach((span) => {
+    span.textContent = "";
+  });
+};
+
+const resetGame = () => {
+  listOfAllDice.forEach((el) => (el.textContent = 0));
+  score = 0;
+  rolls = 0;
+  round = 1;
+  totalScoreElement.textContent = score;
+  scoreHistory.textContent = "";
+  rollsElement.textContent = rolls;
+  roundElement.textContent = round;
+  resetRadioOptions();
+};
+
+const checkForStraights = (arr) => {
+  const arrOrd = arr.sort((a, b) => a - b);
+  let cont = 1;
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] === arr[i - 1] + 1) {
+      cont++;
+    }
+  }
+
+  if (cont === 4) {
+    updateRadioOption(3, 30);
+  } else if (cont > 4) {
+    updateRadioOption(3, 30);
+    updateRadioOption(4, 40);
+  }
+
+  updateRadioOption(5, 0);
+};
+
 rollDiceBtn.addEventListener("click", () => {
   if (rolls === 3) {
     alert("You have made three rolls this round. Please select a score.");
   } else {
+    resetRadioOptions();
     rolls++;
     rollDice();
+    updateStats();
+    getHighestDuplicates(diceValuesArr);
+    detectFullHouse(diceValuesArr);
+    checkForStraights(diceValuesArr);
+  }
+});
+
+keepScoreBtn.addEventListener("click", () => {
+  const checked = [...scoreInputs].find((input) => input.checked); // Busco el elemento que este checked
+  const selectedValue = checked?.value; // Si existe, obtengo el valor
+  const achieved = checked?.id; // Si existe, obtengo
+
+  if (selectedValue) {
+    rolls = 0;
+    round++;
+    updateStats();
+    resetRadioOptions();
+    updateScore(selectedValue, achieved);
+    if (round > 6) {
+      setTimeout(() => {
+        alert(`Game Over! Your total score is ${score}`);
+        resetGame();
+      }, 500);
+    }
+  } else {
+    alert("Please select an option or roll the dice");
   }
 });
