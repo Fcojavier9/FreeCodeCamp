@@ -130,8 +130,8 @@ const resetGame = () => {
 const checkForStraights = (arr) => {
   const arrOrd = arr.sort((a, b) => a - b);
   let cont = 1;
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] === arr[i - 1] + 1) {
+  for (let i = 1; i < arrOrd.length; i++) {
+    if (arrOrd[i] === arrOrd[i - 1] + 1) {
       cont++;
     }
   }
