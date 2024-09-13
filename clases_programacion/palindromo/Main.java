@@ -4,7 +4,7 @@ public class Main {
         String frase1 = "Anita lava la tina";
         String frase2 = "A mamá Roma le aviva el amor a papá y a papá Roma le aviva el amor a mamá";
         String frase3 = "Voy al cine";
-
+        
         String palindromo1 = Palindromo.esPalindromo(frase1);
         String palindromo2 = Palindromo.esPalindromo(frase2);
         String palindromo3 = Palindromo.esPalindromo(frase3);

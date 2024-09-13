@@ -1,0 +1,342 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #1b1b32;
+  --black: #000;
+  --dark-light: #121212;
+  --red: #f20000;
+  --dark-red: #7a0000;
+  --yellow: #ffff00;
+  --green: #00ff00;
+  --white: #fff;
+  --white-light: #cbcbcb;
+  --light-grey: #f5f6f733;
+  --light-blue: #4bb0ff;
+  --light-blue-second: #1e90ff;
+  --electric: #F7D02C;
+  --fire: #EE8130;
+  --water: #6390F0;
+  --grass: #7AC74C;
+  --normal: #A8A77A;
+  --fighting: #C22E28;
+  --flying: #A98FF3;
+  --poison: #A33EA1;
+  --ground: #E2BF65;
+  --rock: #B6A136;
+  --bug: #A6B91A;
+  --ghost: #735797;
+  --steel: #B7B7CE;
+  --psychic: #F95587;
+  --ice: #96D9D6;
+  --dragon: #6F35FC;
+  --dark: #705746;
+  --fairy: #D685AD;
+  --unknown: #68A090; /* Color aproximado para 'unknown' */
+  --shadow: #4F507B;  /* Color aproximado para 'shadow' */
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--main-bg-color);
+  color: var(--white);
+}
+
+nav img {
+  margin: 50px;
+  width: auto;
+  height: 50px;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+main {
+  /* como minimo 20rem y como maximo 40% del viewport width */
+  width: max(20rem, 40%);
+}
+
+/* Todos los divs hijos menos el primero */
+#pokedex-container > div:not(:first-child) {
+  margin: 10px; /* Ajusta el margen según sea necesario */
+}
+
+#ventana {
+  display: flex;
+  justify-content: flex-end;
+  width: 150px;
+  height: 40px;
+  background: radial-gradient(
+    at 10% 10%,
+    var(--white) 10px,
+    var(--light-blue) 30%,
+    var(--light-blue-second) 70%
+  );
+  border: 2px solid var(--light-grey);
+  margin: 20px 5px 20px 20px;
+  border-radius: 50px; /* Bordes redondeados */
+  position: relative; /* Para que el pseudo-elemento pueda posicionarse con respecto a este elemento */
+}
+
+.cir {
+  width: 15px;
+  height: 15px;
+  margin: 25px 5px 0 0;
+  background: radial-gradient(
+    at 10% 10%,
+    var(--white) 10px,
+    var(--light-blue) 30%,
+    var(--light-blue-second) 70%
+  );
+  border-radius: 15px;
+}
+
+#ventana::after {
+  content: "";
+  position: absolute;
+  bottom: -15px;
+  left: 0; /* Ajustar este valor para la posicion del borde */
+  width: 100%; /* Ajustar este valor según el ancho del borde */
+  height: 5px; /* Grosor del borde */
+  background-color: black; /* Color del borde */
+  border-radius: 5px; /* Opcional: Radio para bordes inferiores */
+}
+
+#pokedex-container {
+  width: auto;
+  background-color: var(--red);
+  border: 0.5rem solid var(--black);
+}
+
+#search-input {
+  /* clamp(valor minimo, preferido, valor maximo)*/
+  width: clamp(
+    200px,
+    40vw,
+    79%
+  ); /* Ajusta el ancho según sea necesario, 200px es el valor mínimo y 79% del ancho del contenedor es el valor máximo */
+  height: 50px;
+  border-radius: 10px;
+  padding: 0 20px;
+}
+
+#search-button {
+  /* clamp(valor minimo, preferido, valor maximo)*/
+  width: clamp(
+    45px,
+    10vw,
+    19%
+  ); /* Ajusta el ancho según sea necesario, 45px es el valor mínimo y 19% del ancho del contenedor es el valor máximo */
+  height: 50px;
+  border-radius: 10px;
+  background: var(--black);
+  color: var(--white);
+  box-shadow: 1px 1px 6px 1px var(--dark-red);
+}
+
+#search-button:hover {
+  background: var(--dark-light);
+  box-shadow: 1px 1px 9px 1px var(--light-grey);
+}
+
+#pokemon-name {
+  margin-right: 10px;
+}
+
+#weight {
+  margin-right: 10px;
+}
+
+#data-container {
+  color: var(--black);
+  text-align: center;
+  margin: 10px 0;
+  background: radial-gradient(
+    at 10% 10%,
+    var(--white-light) 10px,
+    var(--white) 99%,
+    var(--white) 1%
+  );
+  height: max(30rem, 40vw);
+  border: 2px solid var(--black);
+}
+
+#pokemon-image {
+  margin: 10px 0;
+  background: radial-gradient(
+    at 10% 10%,
+    var(--white-light) 10px,
+    var(--white) 99%,
+    var(--white) 1%
+  );
+  height: 80%;
+}
+
+#sprite {
+  width: 60%;
+  height: 60%;
+  object-fit: cover;
+}
+
+.text-left {
+  margin: 10px;
+  text-align: left;
+}
+
+#stats > * {
+  margin: 0 10px;
+}
+
+.type {
+  text-align: justify;
+  margin: 1px;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+#electric {
+  background-color: var(--electric);
+}
+
+#fire {
+  background-color: var(--fire);
+}
+
+#water {
+  background-color: var(--water);
+}
+
+#grass {
+  background-color: var(--grass);
+}
+
+#normal {
+  background-color: var(--normal);
+}
+
+#fighting {
+  background-color: var(--fighting);
+}
+
+#flying {
+  background-color: var(--flying);
+}
+
+#poison {
+  background-color: var(--poison);
+}
+
+#ground {
+  background-color: var(--ground);
+}
+
+#rock {
+  background-color: var(--rock);
+}
+
+#bug {
+  background-color: var(--bug);
+}
+
+#ghost {
+  background-color: var(--ghost);
+}
+
+#steel {
+  background-color: var(--steel);
+}
+
+#psychic {
+  background-color: var(--psychic);
+}
+
+#ice {
+  background-color: var(--ice);
+}
+
+#dragon {
+  background-color: var(--dragon);
+}
+
+#dark {
+  background-color: var(--dark);
+}
+
+#fairy {
+  background-color: var(--fairy);
+}
+
+#unknown {
+  background-color: var(--unknown);
+}
+
+#shadow {
+  background-color: var(--shadow);
+}
+
+
+/* colores dinamicos LEDS */
+@keyframes colorChange {
+  0% {
+    background: var(--black);
+  }
+  50% {
+    background: var(--rojo);
+  }
+  100% {
+    background: var(--black);
+  }
+}
+
+@keyframes colorChangeYellow {
+  0% {
+    background: var(--black);
+  }
+  50% {
+    background: var(--yellow);
+  }
+  100% {
+    background: var(--black);
+  }
+}
+
+@keyframes colorChangeGreen {
+  0% {
+    background: var(--black);
+  }
+  50% {
+    background: var(--green);
+  }
+  100% {
+    background: var(--black);
+  }
+}
+
+#rojo {
+  animation: colorChange 1s infinite;
+  border: 2px solid var(--black);
+}
+
+#amarillo {
+  animation: colorChangeYellow 1.5s infinite;
+  border: 2px solid var(--black);
+}
+
+#verde {
+  animation: colorChangeGreen 2s infinite;
+  border: 2px solid var(--black);
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokedex</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <img
+          class="fcc-logo"
+          src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+          alt="freeCodeCamp logo"
+        />
+      </nav>
+      <h1 class="title">Pokémon Search App</h1>
+    </header>
+    <main>
+      <div id="pokedex-container">
+        <div class="flex-row">
+          <div id="ventana"></div>
+          <div class="cir" id="rojo"></div>
+          <div class="cir" id="amarillo"></div>
+          <div class="cir" id="verde"></div>
+        </div>
+
+        <div id="buscador">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Enter Pokémon name or ID"
+            required
+          />
+          <button id="search-button">Search</button>
+        </div>
+
+        <div id="data-container" style="display: none;">
+          <div>
+            <div class="flex-row">
+              <h2 id="pokemon-name">Pokémon Name</h2>
+              <h2 id="pokemon-id">ID</h2>
+            </div>
+            <div class="flex-row">
+              <p>Weight: <span id="weight"></span></p>
+              <p>Height: <span id="height"></span></p>
+            </div>
+            <div id="pokemon-image"></div>
+            <p class="text-left">Types: <span id="types"></span></p>
+          </div>
+
+          <div>
+            <h3 class="text-left">Stats</h3>
+            <div id="stats" class="flex-row">
+              <p>HP: <span id="hp"></span></p>
+              <p>Attack: <span id="attack"></span></p>
+              <p>Defense: <span id="defense"></span></p>
+              <p>Special Attack: <span id="special-attack"></span></p>
+              <p>Special Defense: <span id="special-defense"></span></p>
+              <p>Speed: <span id="speed"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
