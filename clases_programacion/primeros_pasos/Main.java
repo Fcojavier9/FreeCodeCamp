@@ -15,7 +15,6 @@ public class Main {
         char caracter2 = 'z';
         boolean res1 = cadena.contains(Character.toString(caracter));
         boolean res2 = cadena.contains(Character.toString(caracter2));
-        int longitud = cadena.length();
 
         // instanciamos un nuevo objeto scanner
         Scanner scanner = new Scanner(System.in);
