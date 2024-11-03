@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "herencia.Main",
+            "projectName": "FreeCodeCamp_4e8aa9dc"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "halloween.Main",
             "projectName": "FreeCodeCamp_4e8aa9dc"
         },
