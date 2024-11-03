@@ -3,7 +3,7 @@ package primeros_pasos.poo;
 public class Persona {
     // Propiedades / Atributos
     public static final String PLANETA = "Tierra";
-    public String nombre;
+    private String nombre;
     public int edad;
     public String dni;
     public static String nacionalidad = "Española";
@@ -19,6 +19,15 @@ public class Persona {
         this.nombre = name;
         this.edad = age;
         this.dni = "00000000A";
+    }
+
+    // getters y setters
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String name) {
+        this.nombre = name;
     }
 
     // metodos

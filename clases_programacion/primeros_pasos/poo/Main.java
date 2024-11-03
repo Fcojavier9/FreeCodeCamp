@@ -10,10 +10,9 @@ public class Main {
 
         Persona.nacionalidad = "Belga";
 
-        fran.mostrarDatos();
-        ana.mostrarDatos();
-        hector.mostrarDatos();
-
-
+        System.out.println(fran.getNombre());
+        fran.setNombre("Juanito");
+        System.out.println(fran.getNombre());
+        System.out.println(ana.getNombre());
     }
 }

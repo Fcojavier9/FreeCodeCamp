@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "halloween.Main",
+            "projectName": "FreeCodeCamp_4e8aa9dc"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "primeros_pasos.poo.Main",
+            "projectName": "FreeCodeCamp_4e8aa9dc"
+        },
+        {
+            "type": "java",
             "name": "ArrayList_Clase",
             "request": "launch",
             "mainClass": "primeros_pasos.ArrayList_Clase",
