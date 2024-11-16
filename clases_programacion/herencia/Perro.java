@@ -84,5 +84,15 @@ public class Perro extends Animal {
     public void sonido() {
         System.out.println("Guau");
     }
+
+    @Override
+    public void jugar() {
+        System.out.println("El perro juega con un hueso");
+    }
+
+    @Override
+    public void dormir() {
+        System.out.println("El perro duerme en su cama");
+    }
     
 }

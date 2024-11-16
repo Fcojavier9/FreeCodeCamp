@@ -85,4 +85,14 @@ public class Gato extends Animal {
         System.out.println("Miau");
     }
 
+    @Override
+    public void jugar() {
+        System.out.println("El gato juega con una bola de estambre");
+    }
+
+    @Override
+    public void dormir() {
+        System.out.println("El gato duerme en una caja");
+    }
+
 }

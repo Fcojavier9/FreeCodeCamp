@@ -12,11 +12,41 @@ public class Main {
         System.out.println("Garfield es un " + Gato.getTipo());
         System.out.println("Snoopy es un " + Perro.getTipo());
 
-        garfield.sonido();
-        snoopy.sonido();
+        System.out.println("\n");
 
-        garfield.comer();
-        snoopy.comer();
+        BaseDeDatos bd = new BaseDeDatos();
+
+        String mensajeCreacion = bd.create(garfield) 
+                                        ? "Se ha creado el registro de Garfield" 
+                                        : "No se ha podido crear el registro de Garfield";
+        System.out.println(mensajeCreacion);
+
+        System.out.println("\n");
+
+        String mensajeCreacion2 = bd.delete(garfield) 
+                                        ? "Se ha borrado el registro de Garfield" 
+                                        : "No se ha podido borrar el registro de Garfield";
+        System.out.println(mensajeCreacion2);
+
+        System.out.println("\n");
+
+        String mensajeCreacion3 = bd.create(garfield) 
+                                        ? "Se ha creado el registro de Garfield" 
+                                        : "No se ha podido crear el registro de Garfield";
+        System.out.println(mensajeCreacion3);
+
+        garfield.setColor("Pelirrojo");
+
+        String mensajeCreacion4 = bd.update(garfield) 
+                                        ? "Se ha actualizado el registro de Garfield" 
+                                        : "No se ha podido actualizar el registro de Garfield";
+        System.out.println(mensajeCreacion4);
+
+        BaseDeDatos copiaDeSeguridad = new BaseDeDatos(bd.getRegistros());
+
+        System.out.println("\n");
+
+        System.out.println(bd.read("Garfield"));
 
     }
 }

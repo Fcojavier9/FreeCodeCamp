@@ -1,6 +1,6 @@
 package herencia;
 
-public abstract class Animal{
+public abstract class Animal implements IMascota {
     // ATRIBUTOS
     private String nombre;
     private int edad;

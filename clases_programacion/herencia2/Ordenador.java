@@ -2,7 +2,7 @@ package herencia2;
 
 import java.util.Objects;
 
-public class Ordenador {
+public abstract class Ordenador {
 
     // ATRIBUTOS
     private double precio;
@@ -117,4 +117,7 @@ public class Ordenador {
                 && Objects.equals(marca, other.marca) && Objects.equals(modelo, other.modelo)
                 && Objects.equals(perifericos, other.perifericos) && precio == other.precio;
     }
+
+    // METODOS
+    public abstract void encender();
 }
